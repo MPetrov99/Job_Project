@@ -1,14 +1,10 @@
 import * as PIXI from "pixi.js";
+// import { Buttons } from "./Buttons";
 
 export class BaseButton extends PIXI.Container{
-    // container: PIXI.Container;
     addTodoButton: PIXI.Graphics | undefined;
     constructor() {
         super();
-        // this.container = new PIXI.Container();
-
-        // this.addChild(this.container);
-
         this.createAddTodoButton();
     }
     public createAddTodoButton(): void {
@@ -19,5 +15,21 @@ export class BaseButton extends PIXI.Container{
         this.addTodoButton.endFill();
         this.addChild(this.addTodoButton);
         // console.log(this.addTodoButton);
+    }
+
+    public mode() {
+
+    }
+
+    public mouseOver() {
+
+    }
+
+    public mouseClick() {
+
+    }
+
+    public idle() {
+
     }
 }

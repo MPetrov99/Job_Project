@@ -4,23 +4,18 @@ import { BaseButton } from "./Buttons/BaseButton";
 // import { ToDoView } from "./View/todoview";
 
 export class Application {
-  private app: PIXI.Application | undefined;
+  private app: PIXI.Application = new PIXI.Application({
+    resizeTo: window,
+    backgroundColor: 0xfff4de
+  });
   scene: BaseButton | undefined;
   constructor() {
     this.run();
-    this.start();
   }
   public run() {
-    this.app = new PIXI.Application({ 
-      resizeTo: window,
-      backgroundColor: 0xfff4de
-    })
-    document.body.appendChild(this.app.view)
-  }
-
-  public start() {
+    document.body.appendChild(this.app.view);
     this.scene = new BaseButton();
-    this.app?.stage.addChild(this.scene);
+    this.app.stage.addChild(this.scene);
   }
 }
 
