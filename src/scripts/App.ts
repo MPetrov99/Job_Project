@@ -1,6 +1,6 @@
 // import * as _ from "lodash";
 import * as PIXI from "pixi.js";
-import { BaseButton } from "./Buttons/BaseButton";
+import { BaseButton } from "./UI/BaseButton";
 // import { ToDoView } from "./View/todoview";
 
 export class Application {
@@ -18,149 +18,6 @@ export class Application {
     this.app.stage.addChild(this.scene);
   }
 }
-
-// const app = new PIXI.Application({
-//   width: window.screen.width,
-//   height: window.screen.height,
-//   backgroundColor: 0xfff4de,
-// });
-
-// app.renderer.view.style.position = "absolute";
-
-// document.body.appendChild(app.view);
-
-// const Graphics = PIXI.Graphics;
-
-// // Text Styles
-
-// const textStyleSmall = new PIXI.TextStyle({
-//   fontSize: 20,
-//   fontWeight: "bold",
-//   fill: "0x000000",
-// });
-
-// const textStyleMedium = new PIXI.TextStyle({
-//   fontSize: 25,
-//   fontWeight: "bold",
-//   fill: "0x000000",
-// });
-
-// const textStyleBig = new PIXI.TextStyle({
-//   fontSize: 45,
-//   fontWeight: "bold",
-//   fill: "0x000000",
-// });
-
-// // Add ToDo Button
-// const addTodoContainer = new PIXI.Container();
-
-// const addTodoRect = new Graphics();
-// addTodoRect
-//   .beginFill(0x9e9a9b)
-//   .lineStyle(4, 0x000000, 1)
-//   .drawRect(100, 70, 200, 100)
-//   .endFill();
-
-// addTodoContainer.addChild(addTodoRect);
-
-// const addTodoText = new PIXI.Text("ADD TODO", textStyleMedium);
-// addTodoText.position.set(130, 105);
-
-// addTodoContainer.addChild(addTodoText);
-
-// addTodoContainer.interactive = true;
-// addTodoContainer.buttonMode = true;
-
-// app.stage.addChild(addTodoContainer);
-
-// // Delete ToDo Button
-// const deleteTodoContainer = new PIXI.Container();
-
-// const deleteTodoRect = new Graphics();
-// deleteTodoRect
-//   .beginFill(0x9e9a9b)
-//   .lineStyle(4, 0x000000, 1)
-//   .drawRect(350, 70, 200, 100)
-//   .endFill();
-
-// deleteTodoContainer.addChild(deleteTodoRect);
-
-// const deleteTodoText = new PIXI.Text("DELETE TODO", textStyleMedium);
-// deleteTodoText.position.set(362, 105);
-
-// deleteTodoContainer.addChild(deleteTodoText);
-
-// deleteTodoContainer.interactive = true;
-// deleteTodoContainer.buttonMode = true;
-
-// app.stage.addChild(deleteTodoContainer);
-
-
-// // Edit ToDo Button
-// const editTodoContainer = new PIXI.Container;
-
-// const editTodoRect = new Graphics();
-// editTodoRect
-//   .beginFill(0x9e9a9b)
-//   .lineStyle(4, 0x000000, 1)
-//   .drawRect(600, 70, 200, 100)
-//   .endFill();
-
-// editTodoContainer.addChild(editTodoRect);
-
-// const editTodoText = new PIXI.Text("EDIT TODO", textStyleMedium);
-// editTodoText.position.set(630, 105);
-
-// editTodoContainer.addChild(editTodoText);
-
-// editTodoContainer.interactive = true;
-// editTodoContainer.buttonMode = true;
-
-// app.stage.addChild(editTodoContainer);
-
-// // Ascdeing ToDo Button
-// const ascendingTodoContainer = new PIXI.Container;
-
-// const ascendingTodoRect = new Graphics();
-// ascendingTodoRect
-//   .beginFill(0x9e9a9b)
-//   .lineStyle(3, 0x000000, 1)
-//   .drawRect(850, 65, 200, 45)
-//   .endFill();
-
-// ascendingTodoContainer.addChild(ascendingTodoRect);
-
-// const ascendingTodoText = new PIXI.Text("ASCENDING", textStyleMedium);
-// ascendingTodoText.position.set(870, 75);
-
-// ascendingTodoContainer.addChild(ascendingTodoText);
-
-// ascendingTodoContainer.interactive = true;
-// ascendingTodoContainer.buttonMode = true;
-
-// app.stage.addChild(ascendingTodoContainer);
-
-// // Descending ToDo Button
-// const descendingTodoContainer = new PIXI.Container;
-
-// const descendingTodoRect = new Graphics();
-// descendingTodoRect
-//   .beginFill(0x9e9a9b)
-//   .lineStyle(3, 0x000000, 1)
-//   .drawRect(850, 125, 200, 45)
-//   .endFill();
-
-// descendingTodoContainer.addChild(descendingTodoRect);
-
-// const descendingTodoText = new PIXI.Text("DESCENDING", textStyleMedium);
-// descendingTodoText.position.set(865, 135);
-
-// descendingTodoContainer.addChild(descendingTodoText);
-
-// descendingTodoContainer.interactive = true;
-// descendingTodoContainer.buttonMode = true;
-
-// app.stage.addChild(descendingTodoContainer);
 
 // // Filter by Creation Date Button
 // const creationDateContainer = new PIXI.Container;
@@ -260,9 +117,3 @@ export class Application {
 // line.lineStyle(5, 0x000000, 1).moveTo(0, 200).lineTo(2500, 200);
 
 // app.stage.addChild(line);
-
-// // class Application extends PIXI.Application {
-// //  constructor() {
-// //    super();
-// //  }
-// // }

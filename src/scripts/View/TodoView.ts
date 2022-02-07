@@ -1,25 +1,25 @@
 export class ToDoView {
-    selectable() {
- 
-    }
- 
-    editable() {
- 
-    }
- 
-    state() {
- 
-    }
- 
-    visual() {
- 
-    }
- 
-    editMode() {
- 
-    }
- 
-    overdue() {
-        
-    }
- } 
+   selectable() {
+
+   }
+
+   editable() {
+
+   }
+
+   state() {
+
+   }
+
+   visual() {
+
+   }
+
+   editMode() {
+
+   }
+
+   overdue() {
+       
+   }
+} 
