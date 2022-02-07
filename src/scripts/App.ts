@@ -19,28 +19,6 @@ export class Application {
   }
 }
 
-// // Filter by Creation Date Button
-// const creationDateContainer = new PIXI.Container;
-
-// const creationDateRect = new Graphics();
-// creationDateRect
-//   .beginFill(0x9e9a9b)
-//   .lineStyle(3, 0x000000, 1)
-//   .drawRect(1100, 100, 200, 45)
-//   .endFill();
-
-// creationDateContainer.addChild(creationDateRect);
-
-// const creationDateText = new PIXI.Text("CREATION DATE", textStyleSmall);
-// creationDateText.position.set(1120, 111);
-
-// creationDateContainer.addChild(creationDateText);
-
-// creationDateContainer.interactive = true;
-// creationDateContainer.buttonMode = true;
-
-// app.stage.addChild(creationDateContainer);
-
 // //Filter by Due Date Button
 // const dueDateContainer = new PIXI.Container;
 

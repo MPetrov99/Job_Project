@@ -2,12 +2,15 @@ import * as PIXI from "pixi.js";
 import { TextStyles } from "../TextStyles";
 
 export class AscendingTodoButton extends PIXI.Container {
-  private styleSmall: TextStyles | undefined;
+  private style: TextStyles | undefined;
+  private styleMedium: TextStyles["textSmall"];
   ascendingTodoButton: PIXI.Graphics | undefined;
   ascendingTodoButtonText: PIXI.Text | undefined;
 
   constructor() {
     super();
+    this.style = new TextStyles();
+    this.styleMedium = this.style.textMedium;
     this.createAscendingTodoButton();
     this.createAscendingTodoButtonText();
   }
@@ -24,8 +27,8 @@ export class AscendingTodoButton extends PIXI.Container {
   }
 
   public createAscendingTodoButtonText() {
-    this.ascendingTodoButtonText = new PIXI.Text("ASCENDING", this.styleSmall);
-    this.ascendingTodoButtonText.position.set(870, 75);
+    this.ascendingTodoButtonText = new PIXI.Text("ASCENDING", this.styleMedium);
+    this.ascendingTodoButtonText.position.set(870, 78);
     this.addChild(this.ascendingTodoButtonText);
   }
 }

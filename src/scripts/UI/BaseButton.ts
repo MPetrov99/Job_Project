@@ -5,6 +5,8 @@ import { EditTodoButton } from "./Elements/EditTodoButton";
 import { AscendingTodoButton } from "./Elements/AscendingTodoButton";
 import { DescendingTodoButton } from "./Elements/DescendingTodoButton";
 import { CreationDateButton } from "./Elements/CreationDateButton";
+import { DueDateButton } from "./Elements/DueDateButton";
+import { UnderButtonLine } from "./Elements/UnderButtonLine";
 
 export class BaseButton extends PIXI.Container{
     buttonAdd: AddTodoButton | undefined;
@@ -13,6 +15,8 @@ export class BaseButton extends PIXI.Container{
     buttonAscending: AscendingTodoButton | undefined;
     buttonDescending: DescendingTodoButton | undefined;
     buttonCreationDate: CreationDateButton | undefined;
+    buttonDueDate: DueDateButton | undefined;
+    line: UnderButtonLine |undefined;
     constructor() {
         super();
         this.addAddTodoButton();
@@ -21,7 +25,11 @@ export class BaseButton extends PIXI.Container{
         this.addAscendingTodoButton();
         this.addDescendingTodoButton();
         this.addCreationDateButton();
+        this.addDueDateButton();
+        this.addLine();
     }
+
+    // Adding the buttons to the UI
     public addAddTodoButton() {
         this.buttonAdd = new AddTodoButton;
         this.addChild(this.buttonAdd);
@@ -51,6 +59,19 @@ export class BaseButton extends PIXI.Container{
         this.buttonCreationDate = new CreationDateButton;
         this.addChild(this.buttonCreationDate);
     }
+    
+    public addDueDateButton() {
+        this.buttonDueDate = new DueDateButton;
+        this.addChild(this.buttonDueDate);
+    }
+    
+    public addLine() {
+        this.line = new UnderButtonLine;
+        this.addChild(this.line);
+    }
+
+
+    //
 
     public mode() {
 

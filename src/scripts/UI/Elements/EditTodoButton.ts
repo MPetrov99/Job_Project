@@ -2,12 +2,15 @@ import * as PIXI from "pixi.js";
 import { TextStyles } from "../TextStyles";
 
 export class EditTodoButton extends PIXI.Container {
-  private styleMedium: TextStyles | undefined;
+  private style: TextStyles | undefined;
+  private styleMedium: TextStyles["textSmall"];
   editTodoButton: PIXI.Graphics | undefined;
   editTodoButtonText: PIXI.Text | undefined;
 
   constructor() {
     super();
+    this.style = new TextStyles();
+    this.styleMedium = this.style.textMedium;
     this.createEditTodoButton();
     this.createEditTodoButtonText();
   }

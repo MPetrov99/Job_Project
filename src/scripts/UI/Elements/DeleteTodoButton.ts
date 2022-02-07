@@ -2,12 +2,15 @@ import * as PIXI from "pixi.js";
 import { TextStyles } from "../TextStyles";
 
 export class DeleteTodoButton extends PIXI.Container {
-  private styleMedium: TextStyles | undefined;
+  private style: TextStyles | undefined;
+  private styleMedium: TextStyles["textSmall"];
   deleteTodoButton: PIXI.Graphics | undefined;
   deleteTodoButtonText: PIXI.Text | undefined;
 
   constructor() {
     super();
+    this.style = new TextStyles();
+    this.styleMedium = this.style.textMedium;
     this.createDeleteTodoButton();
     this.createDeleteTodoButtonText();
   }
