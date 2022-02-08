@@ -17,10 +17,9 @@ export class CreationDateButton extends PIXI.Container {
 
   public createCreationDateButton() {
     this.creationDateButton = new PIXI.Graphics();
-    this.creationDateButton.beginFill(0x9e9a9b)
-    this.creationDateButton.lineStyle(3, 0x000000, 1)
-    this.creationDateButton.drawRect(1350, 100, 200, 45)
-    this.creationDateButton.endFill();
+    this.creationDateButton.beginFill(0x9e9a9b);
+    this.creationDateButton.lineStyle(3, 0x000000, 1);
+    this.creationDateButton.drawRect(1350, 100, 200, 45);
     this.creationDateButton.interactive = true;
     this.creationDateButton.buttonMode = true;
     this.creationDateButton.endFill();
@@ -29,8 +28,6 @@ export class CreationDateButton extends PIXI.Container {
   public createCreationDateButtonText() {
     this.creationDateButtonText = new PIXI.Text("CREATION DATE", this.styleSmall);
     this.creationDateButtonText.position.set(1220, 111);
-    // this.createCreationDateButtonText.zIndex
     this.addChild(this.creationDateButtonText);
   }
-  
 }

@@ -1,5 +1,4 @@
 import * as PIXI from "pixi.js";
-
 export class UnderButtonLine extends PIXI.Container {
     line: PIXI.Graphics | undefined;
 

@@ -6,6 +6,9 @@ import { AscendingTodoButton } from "./Elements/AscendingTodoButton";
 import { DescendingTodoButton } from "./Elements/DescendingTodoButton";
 import { CreationDateButton } from "./Elements/CreationDateButton";
 import { DueDateButton } from "./Elements/DueDateButton";
+import { TitleButton } from "./Elements/TitleButton";
+import { PriorityButton } from "./Elements/PriorityButton";
+import { FilterText } from "./Elements/FilterText";
 import { UnderButtonLine } from "./Elements/UnderButtonLine";
 
 export class BaseButton extends PIXI.Container{
@@ -14,8 +17,11 @@ export class BaseButton extends PIXI.Container{
     buttonEdit: EditTodoButton | undefined;
     buttonAscending: AscendingTodoButton | undefined;
     buttonDescending: DescendingTodoButton | undefined;
-    buttonCreationDate: CreationDateButton | undefined;
     buttonDueDate: DueDateButton | undefined;
+    buttonCreationDate: CreationDateButton | undefined;
+    buttonTitle: TitleButton | undefined;
+    buttonPriority: PriorityButton | undefined;
+    filterText: FilterText | undefined;
     line: UnderButtonLine |undefined;
     constructor() {
         super();
@@ -26,6 +32,9 @@ export class BaseButton extends PIXI.Container{
         this.addDescendingTodoButton();
         this.addCreationDateButton();
         this.addDueDateButton();
+        this.addTitleButton();
+        this.addPriorityButton();
+        this.addFilterText();
         this.addLine();
     }
 
@@ -65,11 +74,25 @@ export class BaseButton extends PIXI.Container{
         this.addChild(this.buttonDueDate);
     }
     
+    public addTitleButton() {
+        this.buttonTitle = new TitleButton;
+        this.addChild(this.buttonTitle);
+    }
+
+    public addPriorityButton() {
+        this.buttonPriority = new PriorityButton;
+        this.addChild(this.buttonPriority);
+    }
+
+    public addFilterText() {
+        this.filterText = new FilterText;
+        this.addChild(this.filterText);
+    }
+
     public addLine() {
         this.line = new UnderButtonLine;
         this.addChild(this.line);
     }
-
 
     //
 
