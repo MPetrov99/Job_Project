@@ -21,6 +21,7 @@ export class PriorityButton extends BaseButton {
     this.priorityButton.beginFill(0x9e9a9b);
     this.priorityButton.lineStyle(3, 0x000000, 1);
     this.priorityButton.drawRect(1850, 100, 200, 45);
+    this.priorityButton.alpha = 0.45;
     this.priorityButton.interactive = true;
     this.priorityButton.buttonMode = true;
     this.priorityButton.endFill();

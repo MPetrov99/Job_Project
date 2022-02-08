@@ -21,6 +21,7 @@ export class CreationDateButton extends BaseButton {
     this.creationDateButton.beginFill(0x9e9a9b);
     this.creationDateButton.lineStyle(3, 0x000000, 1);
     this.creationDateButton.drawRect(1100, 100, 200, 45);
+    this.creationDateButton.alpha = 0.45;
     this.creationDateButton.interactive = true;
     this.creationDateButton.buttonMode = true;
     this.creationDateButton.endFill();

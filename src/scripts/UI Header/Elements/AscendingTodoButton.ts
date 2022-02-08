@@ -21,6 +21,7 @@ export class AscendingTodoButton extends BaseButton {
     this.ascendingTodoButton.beginFill(0x9e9a9b);
     this.ascendingTodoButton.lineStyle(3, 0x000000, 1);
     this.ascendingTodoButton.drawRect(850, 70, 200, 45);
+    this.ascendingTodoButton.alpha = 0.45;
     this.ascendingTodoButton.interactive = true;
     this.ascendingTodoButton.buttonMode = true;
     this.ascendingTodoButton.endFill();

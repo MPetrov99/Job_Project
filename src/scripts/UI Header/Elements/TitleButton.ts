@@ -21,6 +21,7 @@ export class TitleButton extends BaseButton {
     this.titleButton.beginFill(0x9e9a9b);
     this.titleButton.lineStyle(3, 0x000000, 1);
     this.titleButton.drawRect(1600, 100, 200, 45)
+    this.titleButton.alpha = 0.45;
     this.titleButton.interactive = true;
     this.titleButton.buttonMode = true;
     this.titleButton.endFill();

@@ -21,6 +21,7 @@ export class EditTodoButton extends BaseButton {
     this.editTodoButton.beginFill(0x9e9a9b);
     this.editTodoButton.lineStyle(4, 0x000000, 1);
     this.editTodoButton.drawRect(600, 70, 200, 100);
+    this.editTodoButton.alpha = 0.45;
     this.editTodoButton.interactive = true;
     this.editTodoButton.buttonMode = true;
     this.editTodoButton.endFill();

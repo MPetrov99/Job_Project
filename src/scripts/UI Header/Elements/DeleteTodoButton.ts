@@ -21,6 +21,7 @@ export class DeleteTodoButton extends BaseButton {
     this.deleteTodoButton.beginFill(0x9e9a9b);
     this.deleteTodoButton.lineStyle(4, 0x000000, 1);
     this.deleteTodoButton.drawRect(350, 70, 200, 100);
+    this.deleteTodoButton.alpha = 0.45;
     this.deleteTodoButton.interactive = true;
     this.deleteTodoButton.buttonMode = true;
     this.deleteTodoButton.endFill();
