@@ -11,7 +11,10 @@ export class BaseButton extends PIXI.Container{
 
     public mouseOver() {
         this.alpha = 1;
-        console.log("HERE!!!");
+    }
+
+    public mouseoff() {
+        this.alpha = 0.45;
     }
 
     public mouseClick() {

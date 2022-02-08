@@ -16,7 +16,11 @@ export class AddTodoButton extends BaseButton{
         this.createAddTodoButton();
         this.createAddTodoButtonText();
         this.hover = new BaseButton();
+        this.interactive = true;
+        this.buttonMode = true;
+        this.alpha = 0.45;
         this.on('pointerover', this.hover.mouseOver);
+        this.on('pointerout', this.hover.mouseoff);
     }
 
     public createAddTodoButton() {
@@ -24,9 +28,6 @@ export class AddTodoButton extends BaseButton{
         this.addTodoButton.beginFill(0x9e9a9b);
         this.addTodoButton.lineStyle(4, 0x000000, 1);
         this.addTodoButton.drawRect(100, 70, 200, 100);
-        this.addTodoButton.alpha = 0.45;
-        this.addTodoButton.interactive = true;
-        this.addTodoButton.buttonMode = true;
         this.addTodoButton.endFill();
         this.addChild(this.addTodoButton);
     }
@@ -36,8 +37,3 @@ export class AddTodoButton extends BaseButton{
         this.addChild(this.addTodoButtonText);
     } 
 }
-
-// function mouseOver(this: AddTodoButton) {
-//     this.alpha = 1;
-//     console.log("HERE!!!");
-// }

@@ -5,6 +5,7 @@ import { TextStyles } from "../TextStyles";
 export class DescendingTodoButton extends BaseButton {
   private style: TextStyles | undefined;
   private styleMedium: TextStyles["textSmall"];
+  private hover: BaseButton | undefined;
   descendingTodoButton: PIXI.Graphics | undefined;
   descendingTodoButtonText: PIXI.Text | undefined;
 
@@ -14,6 +15,12 @@ export class DescendingTodoButton extends BaseButton {
     this.styleMedium = this.style.textMedium;
     this.createDescendingTodoButton();
     this.createDescendingTodoButtonText();
+    this.hover = new BaseButton();
+    this.interactive = true;
+    this.buttonMode = true;
+    this.alpha = 0.45;
+    this.on('pointerover', this.hover.mouseOver);
+    this.on('pointerout', this.hover.mouseoff);
   }
 
   public createDescendingTodoButton() {
@@ -21,9 +28,6 @@ export class DescendingTodoButton extends BaseButton {
     this.descendingTodoButton.beginFill(0x9e9a9b);
     this.descendingTodoButton.lineStyle(3, 0x000000, 1);
     this.descendingTodoButton.drawRect(850, 125, 200, 45);
-    this.descendingTodoButton.alpha = 0.45;
-    this.descendingTodoButton.interactive = true;
-    this.descendingTodoButton.buttonMode = true;
     this.descendingTodoButton.endFill();
     this.addChild(this.descendingTodoButton);
   }

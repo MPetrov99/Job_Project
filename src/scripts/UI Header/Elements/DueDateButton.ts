@@ -5,6 +5,7 @@ import { TextStyles } from "../TextStyles";
 export class DueDateButton extends BaseButton {
   private style: TextStyles | undefined;
   private styleSmall: TextStyles["textSmall"];
+  private hover: BaseButton | undefined;
   dueDateButton: PIXI.Graphics | undefined;
   dueDateButtonText: PIXI.Text | undefined;
 
@@ -14,6 +15,12 @@ export class DueDateButton extends BaseButton {
     this.styleSmall = this.style.textSmall;
     this.createDueDateButton();
     this.createDueDateButtonText();
+    this.hover = new BaseButton();
+    this.interactive = true;
+    this.buttonMode = true;
+    this.alpha = 0.45;
+    this.on('pointerover', this.hover.mouseOver);
+    this.on('pointerout', this.hover.mouseoff)
   }
 
   public createDueDateButton() {
@@ -21,9 +28,6 @@ export class DueDateButton extends BaseButton {
     this.dueDateButton.beginFill(0x9e9a9b);
     this.dueDateButton.lineStyle(3, 0x000000, 1);
     this.dueDateButton.drawRect(1350, 100, 200, 45);
-    this.dueDateButton.alpha = 0.45;
-    this.dueDateButton.interactive = true;
-    this.dueDateButton.buttonMode = true;
     this.dueDateButton.endFill();
     this.addChild(this.dueDateButton);
   }

@@ -5,6 +5,7 @@ import { TextStyles } from "../TextStyles";
 export class CreationDateButton extends BaseButton {
   private style: TextStyles | undefined;
   private styleSmall: TextStyles["textSmall"];
+  private hover: BaseButton | undefined;
   creationDateButton: PIXI.Graphics | undefined;
   creationDateButtonText: PIXI.Text | undefined;
 
@@ -14,6 +15,12 @@ export class CreationDateButton extends BaseButton {
     this.styleSmall = this.style.textSmall;
     this.createCreationDateButton();
     this.createCreationDateButtonText();
+    this.hover = new BaseButton();
+    this.interactive = true;
+    this.buttonMode = true;
+    this.alpha = 0.45;
+    this.on('pointerover', this.hover.mouseOver);
+    this.on('pointerout', this.hover.mouseoff);
   }
 
   public createCreationDateButton() {
@@ -21,9 +28,6 @@ export class CreationDateButton extends BaseButton {
     this.creationDateButton.beginFill(0x9e9a9b);
     this.creationDateButton.lineStyle(3, 0x000000, 1);
     this.creationDateButton.drawRect(1100, 100, 200, 45);
-    this.creationDateButton.alpha = 0.45;
-    this.creationDateButton.interactive = true;
-    this.creationDateButton.buttonMode = true;
     this.creationDateButton.endFill();
     this.addChild(this.creationDateButton);
   }
