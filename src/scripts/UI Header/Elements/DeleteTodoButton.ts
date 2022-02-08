@@ -1,7 +1,8 @@
 import * as PIXI from "pixi.js";
+import { BaseButton } from "../BaseButton";
 import { TextStyles } from "../TextStyles";
 
-export class DeleteTodoButton extends PIXI.Container {
+export class DeleteTodoButton extends BaseButton {
   private style: TextStyles | undefined;
   private styleMedium: TextStyles["textSmall"];
   deleteTodoButton: PIXI.Graphics | undefined;

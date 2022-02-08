@@ -1,7 +1,8 @@
 import * as PIXI from "pixi.js";
+import { BaseButton } from "../BaseButton";
 import { TextStyles } from "../TextStyles";
 
-export class FilterText extends PIXI.Container {
+export class FilterText extends BaseButton {
     private style: TextStyles | undefined;
     private styleLarge: TextStyles["textLarge"];
     filterText: PIXI.Text | undefined;

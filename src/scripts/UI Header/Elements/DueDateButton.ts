@@ -1,7 +1,8 @@
 import * as PIXI from "pixi.js";
+import { BaseButton } from "../BaseButton";
 import { TextStyles } from "../TextStyles";
 
-export class DueDateButton extends PIXI.Container {
+export class DueDateButton extends BaseButton {
   private style: TextStyles | undefined;
   private styleSmall: TextStyles["textSmall"];
   dueDateButton: PIXI.Graphics | undefined;

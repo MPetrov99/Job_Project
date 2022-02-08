@@ -1,7 +1,8 @@
 import * as PIXI from "pixi.js";
+import { BaseButton } from "../BaseButton";
 import { TextStyles } from "../TextStyles";
 
-export class DescendingTodoButton extends PIXI.Container {
+export class DescendingTodoButton extends BaseButton {
   private style: TextStyles | undefined;
   private styleMedium: TextStyles["textSmall"];
   descendingTodoButton: PIXI.Graphics | undefined;

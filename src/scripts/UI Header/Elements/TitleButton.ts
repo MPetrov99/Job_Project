@@ -1,7 +1,8 @@
 import * as PIXI from "pixi.js";
+import { BaseButton } from "../BaseButton";
 import { TextStyles } from "../TextStyles";
 
-export class TitleButton extends PIXI.Container {
+export class TitleButton extends BaseButton {
   private style: TextStyles | undefined;
   private styleSmall: TextStyles["textSmall"];
   titleButton: PIXI.Graphics | undefined;

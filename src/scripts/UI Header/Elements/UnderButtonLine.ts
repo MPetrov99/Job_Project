@@ -1,5 +1,7 @@
 import * as PIXI from "pixi.js";
-export class UnderButtonLine extends PIXI.Container {
+import { BaseButton } from "../BaseButton";
+
+export class UnderButtonLine extends BaseButton {
     line: PIXI.Graphics | undefined;
 
     constructor() {

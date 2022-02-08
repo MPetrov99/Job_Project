@@ -11,7 +11,7 @@ import { PriorityButton } from "./Elements/PriorityButton";
 import { FilterText } from "./Elements/FilterText";
 import { UnderButtonLine } from "./Elements/UnderButtonLine";
 
-export class BaseButton extends PIXI.Container{
+export class NavBar extends PIXI.Container{
     buttonAdd: AddTodoButton | undefined;
     buttonDelete: DeleteTodoButton | undefined;
     buttonEdit: EditTodoButton | undefined;
@@ -38,7 +38,7 @@ export class BaseButton extends PIXI.Container{
         this.addLine();
     }
 
-    // Adding the buttons to the UI
+    // Adding the buttons to the Header of the UI
     public addAddTodoButton() {
         this.buttonAdd = new AddTodoButton;
         this.addChild(this.buttonAdd);
@@ -92,23 +92,5 @@ export class BaseButton extends PIXI.Container{
     public addLine() {
         this.line = new UnderButtonLine;
         this.addChild(this.line);
-    }
-
-    //
-
-    public mode() {
-
-    }
-
-    public mouseOver() {
-
-    }
-
-    public mouseClick() {
-
-    }
-
-    public idle() {
-
     }
 }

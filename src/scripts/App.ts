@@ -1,5 +1,5 @@
 import * as PIXI from "pixi.js";
-import { BaseButton } from "./UI/BaseButton";
+import { NavBar } from "./UI Header/NavBar";
 // import { ToDoView } from "./View/todoview";
 
 export class Application {
@@ -7,13 +7,13 @@ export class Application {
     resizeTo: window,
     backgroundColor: 0xfff4de
   });
-  scene: BaseButton | undefined;
+  scene: NavBar | undefined;
   constructor() {
     this.run();
   }
   public run() {
     document.body.appendChild(this.app.view);
-    this.scene = new BaseButton();
+    this.scene = new NavBar();
     this.app.stage.addChild(this.scene);
   }
 }

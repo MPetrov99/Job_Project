@@ -1,7 +1,8 @@
 import * as PIXI from "pixi.js";
+import { BaseButton } from "../BaseButton";
 import { TextStyles } from "../TextStyles";
 
-export class PriorityButton extends PIXI.Container {
+export class PriorityButton extends BaseButton {
   private style: TextStyles | undefined;
   private styleSmall: TextStyles["textSmall"];
   priorityButton: PIXI.Graphics | undefined;
