@@ -5,7 +5,7 @@ import { TextStyles } from "../TextStyles";
 export class AddTodoButton extends BaseButton{
     private style: TextStyles | undefined;
     private styleMedium: TextStyles["textMedium"];
-    // private hover: BaseButton | undefined;
+    private hover: BaseButton | undefined;
     addTodoButton: PIXI.Graphics | undefined;
     addTodoButtonText: PIXI.Text | undefined;
     
@@ -15,8 +15,8 @@ export class AddTodoButton extends BaseButton{
         this.styleMedium = this.style.textMedium;
         this.createAddTodoButton();
         this.createAddTodoButtonText();
-        // this.hover = new AddTodoButton();
-        this.on('pointerover', mouseOver);
+        this.hover = new BaseButton();
+        this.on('pointerover', this.hover.mouseOver);
     }
 
     public createAddTodoButton() {
@@ -37,7 +37,7 @@ export class AddTodoButton extends BaseButton{
     } 
 }
 
-function mouseOver(this: AddTodoButton) {
-    this.alpha = 1;
-    console.log("HERE!!!");
-}
+// function mouseOver(this: AddTodoButton) {
+//     this.alpha = 1;
+//     console.log("HERE!!!");
+// }
