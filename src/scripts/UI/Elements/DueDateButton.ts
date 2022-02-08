@@ -19,7 +19,7 @@ export class DueDateButton extends PIXI.Container {
     this.dueDateButton = new PIXI.Graphics();
     this.dueDateButton.beginFill(0x9e9a9b);
     this.dueDateButton.lineStyle(3, 0x000000, 1);
-    this.dueDateButton.drawRect(1100, 100, 200, 45);
+    this.dueDateButton.drawRect(1350, 100, 200, 45);
     this.dueDateButton.interactive = true;
     this.dueDateButton.buttonMode = true;
     this.dueDateButton.endFill();
