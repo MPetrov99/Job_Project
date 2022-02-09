@@ -1,17 +1,19 @@
-export class ListManager {
+import * as PIXI from "pixi.js";
+
+export class TodoListManager extends PIXI.Container {
     constructor() {
-        
+        super();
     }
 
-    public sorting() {
+//     public sorting() {
 
-    }
+//     }
 
-    public add() {
+//     public add() {
 
-    }
+//     }
 
-    public delete() {
+//     public delete() {
 
-    }
+//     }
 }

@@ -1,25 +1,32 @@
-export class ToDoView {
-   selectable() {
+import { TodoListManager } from "./TodoListManager";
 
+export class ToDoView extends TodoListManager {
+   
+   constructor() {
+      super();
    }
+   
+//    public selectable() {
 
-   editable() {
+//    }
 
-   }
+//    public editable() {
 
-   state() {
+//    }
 
-   }
+//    public state() {
 
-   visual() {
+//    }
 
-   }
+//    public visual() {
 
-   editMode() {
+//    }
 
-   }
+//    public editMode() {
 
-   overdue() {
+//    }
+
+//    public overdue() {
        
-   }
+//    }
 } 
