@@ -13,12 +13,12 @@ export class BaseButton extends PIXI.Container{
         this.alpha = 1;
     }
 
-    public mouseoff() {
+    public mouseOff() {
         this.alpha = 0.45;
     }
 
     public mouseClick() {
-
+        console.log("CLICKED !!!");
     }
 
     public idle() {

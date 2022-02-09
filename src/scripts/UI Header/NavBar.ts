@@ -40,57 +40,57 @@ export class NavBar extends PIXI.Container{
 
     // Adding the buttons to the Header of the UI
     public addAddTodoButton() {
-        this.buttonAdd = new AddTodoButton;
+        this.buttonAdd = new AddTodoButton();
         this.addChild(this.buttonAdd);
     }
 
     public addDeleteTodoButton() { 
-        this.buttonDelete = new DeleteTodoButton;
+        this.buttonDelete = new DeleteTodoButton();
         this.addChild(this.buttonDelete);
     }
 
     public addEditTodoButton() {
-        this.buttonEdit = new EditTodoButton;
+        this.buttonEdit = new EditTodoButton();
         this.addChild(this.buttonEdit)
     }
 
     public addAscendingTodoButton() { 
-        this.buttonAscending = new AscendingTodoButton;
+        this.buttonAscending = new AscendingTodoButton();
         this.addChild(this.buttonAscending);
     }
 
     public addDescendingTodoButton() {
-        this.buttonDescending = new DescendingTodoButton;
+        this.buttonDescending = new DescendingTodoButton();
         this.addChild(this.buttonDescending);
     }
 
     public addCreationDateButton() {
-        this.buttonCreationDate = new CreationDateButton;
+        this.buttonCreationDate = new CreationDateButton();
         this.addChild(this.buttonCreationDate);
     }
     
     public addDueDateButton() {
-        this.buttonDueDate = new DueDateButton;
+        this.buttonDueDate = new DueDateButton();
         this.addChild(this.buttonDueDate);
     }
     
     public addTitleButton() {
-        this.buttonTitle = new TitleButton;
+        this.buttonTitle = new TitleButton();
         this.addChild(this.buttonTitle);
     }
 
     public addPriorityButton() {
-        this.buttonPriority = new PriorityButton;
+        this.buttonPriority = new PriorityButton();
         this.addChild(this.buttonPriority);
     }
 
     public addFilterText() {
-        this.filterText = new FilterText;
+        this.filterText = new FilterText();
         this.addChild(this.filterText);
     }
 
     public addLine() {
-        this.line = new UnderButtonLine;
+        this.line = new UnderButtonLine();
         this.addChild(this.line);
     }
 }
