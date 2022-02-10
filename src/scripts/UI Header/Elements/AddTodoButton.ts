@@ -8,7 +8,6 @@ export class AddTodoButton extends BaseButton{
     // private interaction: BaseButton | undefined;
     addTodoButton: PIXI.Graphics | undefined;
     addTodoButtonText: PIXI.Text | undefined;
-    
     constructor() {
         super();
         this.style = new TextStyles();
@@ -25,6 +24,7 @@ export class AddTodoButton extends BaseButton{
         this.mouseOff = this.mouseOff.bind(this);
         this.on('pointerdown', this.mouseClick);
         this.mouseClick = this.mouseClick.bind(this);
+        // this..dispatcher.on("pointerdown", this.mouseClick, context)
     }
 
     public createAddTodoButton() {
