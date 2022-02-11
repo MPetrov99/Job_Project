@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
 import { NavBar } from "./UI Header/NavBar";
-import { TodoBody } from "./View/TodoBody";
+import { TodoBody } from "./Views/TodoBody";
 
 export class Application {
   private app: PIXI.Application = new PIXI.Application({

@@ -3,14 +3,20 @@ import { TodoListManager } from "./TodoListManager";
 import { TextStyles } from "../UI Header/TextStyles";
 
 export class TodoView extends TodoListManager {
+   public title: any;
+   // public body: string;
+   // public priorityColor: string;
    private style: TextStyles | undefined;
    private styleSmall: TextStyles["textSmall"];
    private background: PIXI.Graphics | undefined;
    private titleBackground: PIXI.Graphics | undefined;
    private creationDateText: PIXI.Text | undefined;
    private expireDateText: PIXI.Text | undefined;
-   constructor() {
+   constructor(title: any) {
       super();
+      this.title = title;
+      // this.body = body;
+      // this.priorityColor = priorityColor;
       this.style = new TextStyles();
       this.styleSmall = this.style.textSmall;
       this.createBackground();

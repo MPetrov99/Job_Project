@@ -9,7 +9,7 @@ export class TodoBody extends PIXI.Container{
     }
 
     addBackground() {
-        this.backgorund = new TodoView();
+        this.backgorund = new TodoView("Chuppy");
         this.addChild(this.backgorund);
     }
 }
