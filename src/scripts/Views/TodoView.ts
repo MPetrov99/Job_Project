@@ -1,28 +1,36 @@
 import * as PIXI from "pixi.js";
+// import * as PIXI from "../Views/TodoBody";
 import { TodoListManager } from "./TodoListManager";
 import { TextStyles } from "../UI Header/TextStyles";
 
 export class TodoView extends TodoListManager {
-   public title: any;
-   // public body: string;
-   // public priorityColor: string;
+   public title: string;
+   public body: string;
+   public priorityColor: string;
+   public creationDate: string;
+   public expireDate: string;
    private style: TextStyles | undefined;
    private styleSmall: TextStyles["textSmall"];
    private background: PIXI.Graphics | undefined;
    private titleBackground: PIXI.Graphics | undefined;
    private creationDateText: PIXI.Text | undefined;
    private expireDateText: PIXI.Text | undefined;
-   constructor(title: any) {
+   // private todoTileInput: PIXI.PixiTestInput |undefined;
+   // private todoTileInput = document.getElementById("inputTitle");
+   constructor(title: string, body: string, priorityColor: string, creationDate: string, expireDate: string) {
       super();
       this.title = title;
-      // this.body = body;
-      // this.priorityColor = priorityColor;
+      this.body = body;
+      this.priorityColor = priorityColor;
+      this.creationDate = creationDate;
+      this.expireDate = expireDate;
       this.style = new TextStyles();
       this.styleSmall = this.style.textSmall;
       this.createBackground();
       this.createTitleBackground();
       this.createCreationDateText();
       this.createExpireDateText();
+      this.createTitleTextInput();
    }
 
    public createBackground() {
@@ -56,6 +64,9 @@ export class TodoView extends TodoListManager {
       this.addChild(this.expireDateText);
    }
 
+   public createTitleTextInput() {
+      
+   }
    
 //    public selectable() {
 

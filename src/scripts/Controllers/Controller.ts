@@ -9,7 +9,7 @@ export class Controller {
     }
 
     public addTodo() {
-        this.notes.push(new TodoView({title: "Walk the dog"}));
+        this.notes.push(new TodoView("Title", "Note", "Green", "20.02.2022", "24.02.2022"));
         this.saveData()
     }
 
@@ -26,7 +26,7 @@ export class Controller {
         if(!!data) {
             data != JSON.parse(data);
             for(let note of data) {
-                this.notes.push(new TodoView(note));
+                this.notes.push(new TodoView(note, "Note", "Green", "20.02.2022", "24.02.20"));
             }
         }
     }
