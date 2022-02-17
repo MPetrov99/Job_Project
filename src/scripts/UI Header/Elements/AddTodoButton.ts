@@ -5,7 +5,6 @@ import { TextStyles } from "../TextStyles";
 export class AddTodoButton extends BaseButton{
     private style: TextStyles | undefined;
     private styleMedium: TextStyles["textMedium"];
-    // private interaction: BaseButton | undefined;
     addTodoButton: PIXI.Graphics | undefined;
     addTodoButtonText: PIXI.Text | undefined;
     constructor() {
@@ -14,7 +13,6 @@ export class AddTodoButton extends BaseButton{
         this.styleMedium = this.style.textMedium;
         this.createAddTodoButton();
         this.createAddTodoButtonText();
-        // this.interaction = new BaseButton();
         this.interactive = true;
         this.buttonMode = true;
         this.alpha = 0.45;
@@ -24,7 +22,6 @@ export class AddTodoButton extends BaseButton{
         this.mouseOff = this.mouseOff.bind(this);
         this.on('pointerdown', this.mouseClick);
         this.mouseClick = this.mouseClick.bind(this);
-        // this..dispatcher.on("pointerdown", this.mouseClick, context)
     }
 
     public createAddTodoButton() {

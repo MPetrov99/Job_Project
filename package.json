@@ -30,6 +30,7 @@
     },
     "dependencies": {
         "eventemitter3": "^4.0.7",
+        "pixi-drawable-textinput": "^1.0.33",
         "pixi.js": "^5.2.1"
     }
 }

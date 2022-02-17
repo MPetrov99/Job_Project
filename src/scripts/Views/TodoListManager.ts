@@ -5,6 +5,10 @@ export class TodoListManager extends PIXI.Container {
         super();
     }
 
+    public changeBackgroundColorOnClick() {
+        console.log("CLICKED !!!");
+    }
+
 //     public sorting() {
 
 //     }
