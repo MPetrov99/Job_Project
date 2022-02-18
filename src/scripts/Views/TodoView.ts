@@ -23,9 +23,6 @@ export class TodoView extends TodoListManager {
    private titleBackground: PIXI.Graphics | undefined;
    private creationDateText: PIXI.Text | undefined;
    private expireDateText: PIXI.Text | undefined;
-   private greenButton: PIXI.Graphics | undefined;
-   private yellowButton: PIXI.Graphics | undefined;
-   private redButton: PIXI.Graphics | undefined;
    constructor(title: string, body: string, priorityColor: string, creationDate: string, expireDate: string) {
       super();
       this.title = title;
@@ -43,11 +40,9 @@ export class TodoView extends TodoListManager {
       this.createDescriptionTextInput();
       this.createCreationDateInput();
       this.createExpireDateInput();
-      // this.changeBackground();
-   //    this.createGreenButton();
-   //    this.createYellowButton();
-   //    this.createRedButton();
-      this.createPriorityButtons();
+      this.createGreenButton();
+      this.createYellowButton();
+      this.createRedButton();
    }
 
    public createBackground() {
@@ -65,10 +60,6 @@ export class TodoView extends TodoListManager {
       this.titleBackground.lineStyle(4, 0x000000, 1);
       this.titleBackground.drawRect(450, 220, 1175, 150);
       this.titleBackground.endFill();
-      // this.titleBackground.interactive = true;
-      // this.titleBackground.buttonMode = true;
-      // this.titleBackground.on('pointerdown', this.changeBackgroundOnClick);
-      // this.changeBackgroundOnClick = this.changeBackgroundOnClick.bind(this);
       this.addChild(this.titleBackground);
    }
    
@@ -152,66 +143,32 @@ export class TodoView extends TodoListManager {
       this.addChild(this.expireDateInput);
    }
 
-   // public createGreenButton() {
-   //    this.greenButton = new PIXI.Graphics();
-   //    this.greenButton.beginFill(0x68DA74);
-   //    this.greenButton.lineStyle(4, 0x000000, 1);
-   //    this.greenButton.drawRect(460, 230, 30, 30);
-   //    this.greenButton.endFill();
-   //    this.greenButton.interactive = true;
-   //    this.greenButton.buttonMode = true;
-   //    this.addChild(this.greenButton);
-   // }
-
-   // public createYellowButton() {
-   //    this.yellowButton = new PIXI.Graphics();
-   //    this.yellowButton.beginFill(0xFDE900);
-   //    this.yellowButton.lineStyle(4, 0x000000, 1);
-   //    this.yellowButton.drawRect(460, 280, 30, 30);
-   //    this.yellowButton.endFill();
-   //    this.yellowButton.interactive = true;
-   //    this.yellowButton.buttonMode = true;
-   //    this.addChild(this.yellowButton);
-   // }
-
-   // public createRedButton() {
-   //    this.redButton = new PIXI.Graphics();
-   //    this.redButton.beginFill(0xE2260B);
-   //    this.redButton.lineStyle(4, 0x000000, 1);
-   //    this.redButton.drawRect(460, 330, 30, 30);
-   //    this.redButton.endFill();
-   //    this.redButton.interactive = true;
-   //    this.redButton.buttonMode = true;
-   //    this.addChild(this.redButton);
-   // }
-
-   public createPriorityButtons() {
-      this.greenButton = new PIXI.Graphics();
-      this.greenButton.beginFill(0x68DA74);
-      this.greenButton.lineStyle(4, 0x000000, 1);
-      this.greenButton.drawRect(460, 230, 30, 30);
-      this.greenButton.endFill();
-      this.greenButton.interactive = true;
-      this.greenButton.buttonMode = true;
-      this.addChild(this.greenButton);
-      this.yellowButton = new PIXI.Graphics();
-      this.yellowButton.beginFill(0xFDE900);
-      this.yellowButton.lineStyle(4, 0x000000, 1);
-      this.yellowButton.drawRect(460, 280, 30, 30);
-      this.yellowButton.endFill();
-      this.yellowButton.interactive = true;
-      this.yellowButton.buttonMode = true;
-      this.addChild(this.yellowButton);
-      this.redButton = new PIXI.Graphics();
-      this.redButton.beginFill(0xE2260B);
-      this.redButton.lineStyle(4, 0x000000, 1);
-      this.redButton.drawRect(460, 330, 30, 30);
-      this.redButton.endFill();
-      this.redButton.interactive = true;
-      this.redButton.buttonMode = true;
-      this.addChild(this.redButton);
+   public createPriorityButtons(color: number, position: { x: number, y: number }) {
+      let button = new PIXI.Graphics();
+      const { x, y } = position;
+      button = new PIXI.Graphics();
+      button.beginFill(color);
+      button.lineStyle(4, 0x000000, 1);
+      button.drawRect(x, y, 30, 30);
+      button.endFill();
+      button.interactive = true;
+      button.buttonMode = true;
+      // button.
+      this.addChild(button);
    }
-   
+
+   public createGreenButton() {
+      this.createPriorityButtons(0x68DA74, { x: 460, y: 230 });
+   }
+
+   public createYellowButton() {
+      this.createPriorityButtons(0xFDE900, { x: 460, y: 280 });
+   }
+
+   public createRedButton() {
+      this.createPriorityButtons(0xE2260B, { x: 460, y: 330 });
+   }
+
 //    public selectable() {
 
 //    }
