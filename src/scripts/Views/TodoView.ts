@@ -54,24 +54,27 @@ export class TodoView extends TodoListManager {
       this.addChild(this.background);
    }
 
-   public createTitleBackground() {
+   public createTitleBackground(color: number = 0x68DA74) {
       this.titleBackground = new PIXI.Graphics();
-      this.titleBackground.beginFill(0x68DA74);
+      this.titleBackground.beginFill(color);
       this.titleBackground.lineStyle(4, 0x000000, 1);
       this.titleBackground.drawRect(450, 220, 1175, 150);
       this.titleBackground.endFill();
+      this.titleBackground.zIndex = 0;
       this.addChild(this.titleBackground);
    }
    
    public createCreationDateText() { 
       this.creationDateText = new PIXI.Text("CREATION DATE: ", this.styleSmall);
       this.creationDateText.position.set(1050, 280);
+      this.creationDateText.zIndex = 1;
       this.addChild(this.creationDateText);
    }
 
    public createExpireDateText() { 
       this.expireDateText = new PIXI.Text("EXPIRE DATE: ", this.styleSmall);
       this.expireDateText.position.set(1360, 280);
+      this.expireDateText.zIndex = 1;
       this.addChild(this.expireDateText);
    }
 
@@ -89,6 +92,7 @@ export class TodoView extends TodoListManager {
       }
       this.titleText = new TextInput(this.titleTextStyle);
       this.titleText.position.set(570, 245);
+      this.titleText.zIndex = 1;
       this.addChild(this.titleText);
    }
 
@@ -123,6 +127,7 @@ export class TodoView extends TodoListManager {
       }
       this.creatioDateInput = new TextInput(this.creationDateInputStyle);
       this.creatioDateInput.position.set(1220, 266);
+      this.creatioDateInput.zIndex = 1;
       this.addChild(this.creatioDateInput);
    }
 
@@ -140,8 +145,15 @@ export class TodoView extends TodoListManager {
       }
       this.expireDateInput = new TextInput(this.expireDateInputStyle);
       this.expireDateInput.position.set(1500, 266);
+      this.expireDateInput.zIndex = 1;
       this.addChild(this.expireDateInput);
    }
+
+   public changeBackgroundOnClick(color: number) {
+      this.titleBackground?.clear();
+      this.createTitleBackground(color);
+      console.log("CLICKED !!!");
+  }
 
    public createPriorityButtons(color: number, position: { x: number, y: number }) {
       let button = new PIXI.Graphics();
@@ -153,7 +165,8 @@ export class TodoView extends TodoListManager {
       button.endFill();
       button.interactive = true;
       button.buttonMode = true;
-      // button.
+      button.zIndex = 1;
+      button.on('pointerdown', () => this.changeBackgroundOnClick(color))
       this.addChild(button);
    }
 
