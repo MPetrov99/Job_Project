@@ -5,7 +5,8 @@ export class TodoListManager extends PIXI.Container {
         super();
     }
 
-    public changeBackgroundColorOnClick() {
+    public changeBackgroundOnClick() {
+        // this.clear();
         console.log("CLICKED !!!");
     }
 

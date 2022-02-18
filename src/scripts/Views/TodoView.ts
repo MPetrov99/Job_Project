@@ -23,6 +23,7 @@ export class TodoView extends TodoListManager {
    private titleBackground: PIXI.Graphics | undefined;
    private creationDateText: PIXI.Text | undefined;
    private expireDateText: PIXI.Text | undefined;
+   // public yellow = 0xFEE700;
    constructor(title: string, body: string, priorityColor: string, creationDate: string, expireDate: string) {
       super();
       this.title = title;
@@ -40,6 +41,7 @@ export class TodoView extends TodoListManager {
       this.createDescriptionTextInput();
       this.createCreationDateInput();
       this.createExpireDateInput();
+      // this.changeBackground();
    }
 
    public createBackground() {
@@ -59,8 +61,8 @@ export class TodoView extends TodoListManager {
       this.titleBackground.endFill();
       this.titleBackground.interactive = true;
       this.titleBackground.buttonMode = true;
-      this.titleBackground.on('pointerdown', this.changeBackgroundColorOnClick);
-      this.changeBackgroundColorOnClick = this.changeBackgroundColorOnClick.bind(this);
+      this.titleBackground.on('pointerdown', this.changeBackgroundOnClick);
+      this.changeBackgroundOnClick = this.changeBackgroundOnClick.bind(this);
       this.addChild(this.titleBackground);
    }
    
@@ -71,7 +73,6 @@ export class TodoView extends TodoListManager {
    }
 
    public createExpireDateText() { 
-
       this.expireDateText = new PIXI.Text("EXPIRE DATE: ", this.styleSmall);
       this.expireDateText.position.set(1360, 280);
       this.addChild(this.expireDateText);
@@ -85,6 +86,10 @@ export class TodoView extends TodoListManager {
       this.titleTextStyle.backgroundColor = { color: 0x68DA74, alpha: 0 };
       this.titleTextStyle.width = 300;
       this.titleTextStyle.height = 100;
+      this.titleTextStyle.onChange = (value) => {
+         console.log(value);
+         this.title = value + "";
+      }
       this.titleText = new TextInput(this.titleTextStyle);
       this.titleText.position.set(570, 245);
       this.addChild(this.titleText);
@@ -98,6 +103,10 @@ export class TodoView extends TodoListManager {
       this.descriptionTextStyle.backgroundColor = { color: 0xFFFFFF, alpha: 0 };
       this.descriptionTextStyle.width = 1100;
       this.descriptionTextStyle.height = 200;
+      this.descriptionTextStyle.onChange = (value) => {
+         console.log(value);
+         this.body = value + "";
+      }
       this.descriptionText = new TextInput(this.descriptionTextStyle);
       this.descriptionText.position.set(485, 400);
       this.addChild(this.descriptionText);
@@ -111,6 +120,10 @@ export class TodoView extends TodoListManager {
       this.creationDateInputStyle.backgroundColor = { color: 0xFFFFFF, alpha: 0 };
       this.creationDateInputStyle.width = 130;
       this.creationDateInputStyle.height = 50;
+      this.creationDateInputStyle.onChange = (value) => {
+         console.log(value);
+         this.creationDate = value + "";
+      }
       this.creatioDateInput = new TextInput(this.creationDateInputStyle);
       this.creatioDateInput.position.set(1220, 266);
       this.addChild(this.creatioDateInput);
@@ -124,6 +137,10 @@ export class TodoView extends TodoListManager {
       this.expireDateInputStyle.backgroundColor = { color: 0xFFFFFF, alpha: 0 };
       this.expireDateInputStyle.width = 130;
       this.expireDateInputStyle.height = 50;
+      this.expireDateInputStyle.onChange = (value) => {
+         console.log(value);
+         this.expireDate = value + "";
+      }
       this.expireDateInput = new TextInput(this.expireDateInputStyle);
       this.expireDateInput.position.set(1500, 266);
       this.addChild(this.expireDateInput);
