@@ -1,25 +1,21 @@
 import * as PIXI from "pixi.js";
+// import { gsap } from "gsap";
 
 export class TodoListManager extends PIXI.Container {
     constructor() {
         super();
         this.sortableChildren = true;
     }
+    
+        // public add() {
+        // gsap.to();
+        // }
+    
+    //     public delete() {
+            
+    //     }
 
-    // public changeBackgroundOnClick() {
-    //     // this.clear();
-    //     console.log("CLICKED !!!");
-    // }
-
-//     public sorting() {
-
-//     }
-
-//     public add() {
-
-//     }
-
-//     public delete() {
-
-//     }
-}
+    //     public sorting() {
+    
+    //     }
+ }

@@ -166,7 +166,7 @@ export class TodoView extends TodoListManager {
       button.interactive = true;
       button.buttonMode = true;
       button.zIndex = 1;
-      button.on('pointerdown', () => this.changeBackgroundOnClick(color))
+      button.on('pointerdown', () => this.changeBackgroundOnClick(color));
       this.addChild(button);
    }
 
