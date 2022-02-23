@@ -2,10 +2,11 @@ import * as PIXI from "pixi.js";
 import { BaseButton } from "../BaseButton";
 
 export class UnderButtonLine extends BaseButton {
-    line: PIXI.Graphics | undefined;
+    private line: PIXI.Graphics | undefined;
 
     constructor() {
         super();
+        
         this.createLine();
     }
 

@@ -1,4 +1,4 @@
-import { TodoView } from "../Views/TodoView";
+// import { TodoView } from "../Views/TodoView";
 
 export class Controller {
     private notes: any;
@@ -9,7 +9,7 @@ export class Controller {
     }
 
     public addTodo() {
-        this.notes.push(new TodoView("", "", "", "", ""));
+        this.notes.push();
         this.saveData()
     }
 
@@ -25,8 +25,8 @@ export class Controller {
         let data = localStorage.getItem("NoteData");
         if(!!data) {
             data != JSON.parse(data);
-            for(let note of data) {
-                this.notes.push(new TodoView(note, "", "", "", ""));
+            for(let _note of data) {
+                this.notes.push();
             }
         }
     }

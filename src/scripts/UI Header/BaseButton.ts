@@ -1,6 +1,9 @@
 import * as PIXI from "pixi.js";
+import gsap from "gsap";
+import { TodoView } from "../Views/TodoView";
 
 export class BaseButton extends PIXI.Container{
+    // public todo: TodoView | undefined;
     constructor() {
         super();
     }
@@ -19,6 +22,8 @@ export class BaseButton extends PIXI.Container{
 
     public mouseClick() {
         console.log("CLICKED !!!");
+        let todo = new TodoView("");
+        gsap.to(todo, { x: 1000, duration: 1});
     }
 
     public idle() {

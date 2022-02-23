@@ -5,12 +5,14 @@ import { TextStyles } from "../TextStyles";
 export class FilterText extends BaseButton {
     private style: TextStyles | undefined;
     private styleLarge: TextStyles["textLarge"];
-    filterText: PIXI.Text | undefined;
+    private filterText: PIXI.Text | undefined;
 
     constructor() {
         super();
+       
         this.style = new TextStyles();
         this.styleLarge = this.style.textLarge;
+       
         this.createFilterText();
     }
 

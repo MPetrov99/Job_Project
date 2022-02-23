@@ -2,13 +2,14 @@ import * as PIXI from "pixi.js";
 import TextInput, { InputOption } from "pixi-drawable-textinput";
 import { TodoListManager } from "./TodoListManager";
 import { TextStyles } from "../UI Header/TextStyles";
+// import { gsap } from "gsap";
 
 export class TodoView extends TodoListManager {
    public title: string;
-   public body: string;
-   public priorityColor: string;
-   public creationDate: string;
-   public expireDate: string;
+   public body: string | undefined;
+   // public priorityColor: string;
+   public creationDate: string | undefined;
+   public expireDate: string | undefined;
    public titleTextStyle: InputOption | undefined;
    public titleText: TextInput | undefined;
    public descriptionTextStyle: InputOption | undefined;
@@ -23,28 +24,43 @@ export class TodoView extends TodoListManager {
    private titleBackground: PIXI.Graphics | undefined;
    private creationDateText: PIXI.Text | undefined;
    private expireDateText: PIXI.Text | undefined;
-   constructor(title: string, body: string, priorityColor: string, creationDate: string, expireDate: string) {
-      super();
-      this.title = title;
-      this.body = body;
-      this.priorityColor = priorityColor;
-      this.creationDate = creationDate;
-      this.expireDate = expireDate;
-      this.style = new TextStyles();
-      this.styleSmall = this.style.textSmall;
-      this.createBackground();
-      this.createTitleBackground();
-      this.createCreationDateText();
-      this.createExpireDateText();
-      this.createTitleTextInput();
-      this.createDescriptionTextInput();
-      this.createCreationDateInput();
-      this.createExpireDateInput();
-      this.createGreenButton();
-      this.createYellowButton();
-      this.createRedButton();
-   }
+   // constructor(title: string, body: string, priorityColor: string, creationDate: string, expireDate: string) {
+      constructor(title: string) {   
+         super();
+         this.title = title;
+         // this.body = body;
+         // this.priorityColor = priorityColor;
+         // this.creationDate = creationDate;
+         // this.expireDate = expireDate;
+         this.style = new TextStyles();
+         this.styleSmall = this.style.textSmall;
+         this.createBackground();
+         this.createTitleBackground();
+         this.createCreationDateText();
+         this.createExpireDateText();
+         this.createTitleTextInput();
+         this.createDescriptionTextInput();
+         this.createCreationDateInput();
+         this.createExpireDateInput();
+         this.createGreenButton();
+         this.createYellowButton();
+         this.createRedButton();
+         this.saveData();
+      }
 
+      public saveData() {
+         var localStorage = window.localStorage;
+         const todoData = {
+            titleData: this.title,
+            bodyData: this.body,
+            creationDateData: this.creationDate,
+            expireDateData: this.expireDate
+         }
+         localStorage.setItem("data", JSON.stringify(todoData));
+         localStorage.getItem("data");
+         console.log(localStorage);
+      }
+      
    public createBackground() {
       this.background = new PIXI.Graphics();
       this.background.beginFill(0xFFFFFF);
@@ -181,6 +197,13 @@ export class TodoView extends TodoListManager {
    public createRedButton() {
       this.createPriorityButtons(0xE2260B, { x: 460, y: 330 });
    }
+
+
+   
+
+   // public moveDownOnClick() {
+   //    this.gsap.to
+   // }
 
 //    public selectable() {
 
