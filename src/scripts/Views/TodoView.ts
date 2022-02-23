@@ -49,7 +49,7 @@ export class TodoView extends TodoListManager {
       }
 
       public saveData() {
-         var localStorage = window.localStorage;
+      let localStorage = window.localStorage;
          const todoData = {
             titleData: this.title,
             bodyData: this.body,
@@ -197,9 +197,6 @@ export class TodoView extends TodoListManager {
    public createRedButton() {
       this.createPriorityButtons(0xE2260B, { x: 460, y: 330 });
    }
-
-
-   
 
    // public moveDownOnClick() {
    //    this.gsap.to
