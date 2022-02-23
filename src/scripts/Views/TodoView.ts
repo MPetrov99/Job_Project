@@ -47,7 +47,7 @@ export class TodoView extends TodoListManager {
          this.createRedButton();
          this.saveData();
       }
-
+   
       public saveData() {
       let localStorage = window.localStorage;
          const todoData = {
