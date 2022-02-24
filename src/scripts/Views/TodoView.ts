@@ -2,14 +2,15 @@ import * as PIXI from "pixi.js";
 import TextInput, { InputOption } from "pixi-drawable-textinput";
 import { TodoListManager } from "./TodoListManager";
 import { TextStyles } from "../UI Header/TextStyles";
+// import { Controller } from "../Controllers/Controller";
 // import { gsap } from "gsap";
 
 export class TodoView extends TodoListManager {
    public title: string;
-   public body: string | undefined;
+   public body: string;
    // public priorityColor: string;
-   public creationDate: string | undefined;
-   public expireDate: string | undefined;
+   public creationDate: string;
+   public expireDate: string;
    public titleTextStyle: InputOption | undefined;
    public titleText: TextInput | undefined;
    public descriptionTextStyle: InputOption | undefined;
@@ -25,13 +26,13 @@ export class TodoView extends TodoListManager {
    private creationDateText: PIXI.Text | undefined;
    private expireDateText: PIXI.Text | undefined;
    // constructor(title: string, body: string, priorityColor: string, creationDate: string, expireDate: string) {
-      constructor(title: string) {   
+      constructor(title: string, body: string, creationDate: string, expireDate: string) {   
          super();
          this.title = title;
-         // this.body = body;
+         this.body = body;
          // this.priorityColor = priorityColor;
-         // this.creationDate = creationDate;
-         // this.expireDate = expireDate;
+         this.creationDate = creationDate;
+         this.expireDate = expireDate;
          this.style = new TextStyles();
          this.styleSmall = this.style.textSmall;
          this.createBackground();
@@ -45,21 +46,32 @@ export class TodoView extends TodoListManager {
          this.createGreenButton();
          this.createYellowButton();
          this.createRedButton();
-         this.saveData();
+         // this.saveTodoData();
+         // this.printData();
       }
+
+      // public saveTodoData() {
+      //    Controller.saveTodos({
+
+      //    })
+      // }
    
-      public saveData() {
-      let localStorage = window.localStorage;
-         const todoData = {
-            titleData: this.title,
-            bodyData: this.body,
-            creationDateData: this.creationDate,
-            expireDateData: this.expireDate
-         }
-         localStorage.setItem("data", JSON.stringify(todoData));
-         localStorage.getItem("data");
-         console.log(localStorage);
-      }
+      // public saveData() {
+      // let localStorage = window.localStorage;
+      //    const todoData = {
+      //       titleData: this.title,
+      //       bodyData: this.body,
+      //       creationDateData: this.creationDate,
+      //       expireDateData: this.expireDate
+      //    }
+      //    localStorage.setItem("data", JSON.stringify(todoData));
+      //    localStorage.getItem("data");
+      //    console.log(localStorage);
+      // }
+
+      // public printData() {
+      //    console.log(Controller.getTodos());
+      // }
       
    public createBackground() {
       this.background = new PIXI.Graphics();

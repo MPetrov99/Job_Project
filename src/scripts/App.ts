@@ -1,6 +1,7 @@
 import * as PIXI from "pixi.js";
 import { NavBar } from "./UI Header/NavBar";
 import { TodoBody } from "./Views/TodoBody";
+// import { Controller } from "./Controllers/Controller";
 
 export class Application {
   private app: PIXI.Application = new PIXI.Application({
@@ -14,9 +15,13 @@ export class Application {
   }
   public run() {
     document.body.appendChild(this.app.view);
+    
     this.scene = new NavBar();
     this.app.stage.addChild(this.scene);
+    
     this.todo = new TodoBody();
     this.app.stage.addChild(this.todo);
+
+    // console.log(Controller.getTodos());
   }
 }
