@@ -9,17 +9,17 @@ export class Controller {
         // this.addTodo();
         // this.saveData();
         // this.loadData();
-        this.getTodos();
+        // this.getTodos();
         this.saveTodos();
     }
 
-    public getTodos() {
-        const data = JSON.parse(localStorage.getItem("todos") || "[]");
+    // public getTodos() {
+    //     const data = JSON.parse(localStorage.getItem("todos") || "[]");
 
-        return data.sort((a: { updated: string | number | Date; }, b: { updated: string | number | Date; }) => {
-            return new Date(a.updated) > new Date(b.updated) ? -1 : 1;
-        });
-    }
+    //     return data.sort((a: { updated: string | number | Date; }, b: { updated: string | number | Date; }) => {
+    //         return new Date(a.updated) > new Date(b.updated) ? -1 : 1;
+    //     });
+    // }
 
     public saveTodos() {
 

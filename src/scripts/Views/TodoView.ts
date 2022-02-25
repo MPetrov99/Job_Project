@@ -28,13 +28,18 @@ export class TodoView extends TodoListManager {
    // constructor(title: string, body: string, priorityColor: string, creationDate: string, expireDate: string) {
       constructor(title: string, body: string, creationDate: string, expireDate: string) {   
          super();
+         
          this.title = title;
          this.body = body;
          // this.priorityColor = priorityColor;
+         
          this.creationDate = creationDate;
          this.expireDate = expireDate;
          this.style = new TextStyles();
          this.styleSmall = this.style.textSmall;
+         
+         this.interactive = true;
+         
          this.createBackground();
          this.createTitleBackground();
          this.createCreationDateText();
@@ -46,9 +51,22 @@ export class TodoView extends TodoListManager {
          this.createGreenButton();
          this.createYellowButton();
          this.createRedButton();
+         
+         this.on('pointerdown', this.mouseClick)
+         this.mouseClick = this.mouseClick.bind(this);
+         // this.removeTodo();
          // this.saveTodoData();
          // this.printData();
       }
+
+      // public removeTodo() {
+      //    this.parent.removeChild(this);
+      // }
+
+   //    public mouseClick() {
+   //       console.log("CLICKED !!!");
+   //       this.parent.selectedTodo? = this;
+   //   }
 
       // public saveTodoData() {
       //    Controller.saveTodos({
