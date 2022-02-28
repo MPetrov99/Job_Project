@@ -37,12 +37,15 @@ export class DeleteTodoButton extends BaseButton {
       this.mouseClick();
       // this.parent.parent.todo.selectedTodo.removeChild();
     });
-    this.mouseClick = this.mouseClick.bind(this);
+    // this.mouseClick = this.mouseClick.bind(this);
   }
 
-  // public deleteTodo() {
-  //   if this.on('pointerdown') = truw
-  // }
+  public mouseClick(): void {
+      if(global.selectedTodo) {
+        global.selectedTodo.disposeOf();
+        global.selectedTodo = undefined;
+      }
+  }
   
 
   public createDeleteTodoButton() {
