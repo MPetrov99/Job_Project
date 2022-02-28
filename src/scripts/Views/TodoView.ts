@@ -2,6 +2,7 @@ import * as PIXI from "pixi.js";
 import TextInput, { InputOption } from "pixi-drawable-textinput";
 import { TodoListManager } from "./TodoListManager";
 import { TextStyles } from "../UI Header/TextStyles";
+import { TodoBody } from "./TodoBody";
 // import { Controller } from "../Controllers/Controller";
 // import { gsap } from "gsap";
 
@@ -52,13 +53,31 @@ export class TodoView extends TodoListManager {
          this.createYellowButton();
          this.createRedButton();
          
-         this.on('pointerdown', this.mouseClick)
-         this.mouseClick = this.mouseClick.bind(this);
+         // this.on('pointerdown', () => this.mouseClick)
+         // this.on('pointerdown', this.selectTodo)
+         // this.selectTodo = this.selectTodo.bind(this);
+        
+         this.on('pointerdown', () => {
+            console.log("CLICKED !!!");
+            if (this.parent instanceof TodoBody) {
+                this.parent.selectedTodo = this; 
+                console.log(this.parent.selectedTodo)
+            }
+            // this.parent.removeChild(this);
+          });
+
          // this.removeTodo();
          // this.saveTodoData();
          // this.printData();
       }
 
+      // public selectTodo() {
+      //    console.log("CLICKED !!!");
+      //    if (this.parent instanceof TodoBody) {
+      //        this.parent.selectedTodo = this; 
+      //        console.log(this.parent.selectedTodo)
+      //    }
+      // }
       // public removeTodo() {
       //    this.parent.removeChild(this);
       // }

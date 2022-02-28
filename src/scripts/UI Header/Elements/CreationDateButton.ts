@@ -21,11 +21,19 @@ export class CreationDateButton extends BaseButton {
     this.buttonMode = true;
     this.alpha = 0.45;
     
-    this.on('pointerover', this.mouseOver);
+    this.on('pointerover', () => {
+      this.mouseOver();
+    });
     this.mouseOver = this.mouseOver.bind(this);
-    this.on('pointerout', this.mouseOff);
+    
+    this.on('pointerout', () => { 
+      this.mouseOff();
+    });
     this.mouseOff = this.mouseOff.bind(this);
-    this.on('pointerdown', this.mouseClick);
+    
+    this.on('pointerdown', () => { 
+      this.mouseClick();
+    });
     this.mouseClick = this.mouseClick.bind(this);
   }
 

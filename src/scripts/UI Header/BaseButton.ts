@@ -22,6 +22,10 @@ export class BaseButton extends PIXI.Container{
 
     public mouseClick() {
         console.log("CLICKED !!!");
+        // let par = this.parent.parent;
+        // if(!!par) {
+        //     par.selectedTodo.removeChild()
+        // }   
         // let todo = new TodoView("");
         // gsap.to(todo, 1, {pixi:{ x: 1000, duration: 1}});
     }

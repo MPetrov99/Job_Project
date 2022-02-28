@@ -3,7 +3,7 @@ import { TodoView } from "./TodoView";
 
 export class TodoBody extends PIXI.Container{
     public selectedTodo:TodoView | undefined;
-    backgorund: TodoView | undefined;
+    public backgorund: TodoView | undefined;
     constructor() {
         super();
         this.addBackground();

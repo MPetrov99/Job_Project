@@ -20,12 +20,20 @@ export class AddTodoButton extends BaseButton{
         this.buttonMode = true;
         this.alpha = 0.45;
         
-        this.on('pointerover', this.mouseOver);
-        this.mouseOver = this.mouseOver.bind(this);
-        this.on('pointerout', this.mouseOff);
-        this.mouseOff = this.mouseOff.bind(this);
-        this.on('pointerdown', this.mouseClick);
-        this.mouseClick = this.mouseClick.bind(this);
+        this.on('pointerover', () => {
+            this.mouseOver();
+          });
+          this.mouseOver = this.mouseOver.bind(this);
+          
+          this.on('pointerout', () => { 
+            this.mouseOff();
+          });
+          this.mouseOff = this.mouseOff.bind(this);
+          
+          this.on('pointerdown', () => { 
+            this.mouseClick();
+          });
+          this.mouseClick = this.mouseClick.bind(this);
     }
 
     public createAddTodoButton() {
